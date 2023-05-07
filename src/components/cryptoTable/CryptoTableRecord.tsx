@@ -1,4 +1,4 @@
-import { numberTransformer } from '../../../utils/numberTransfors'
+import { numberTransformer } from '../../utils/numberTransfors'
 import CryptoNameAndLogo from './recordFields/CryptoNameAndLogo'
 import CryptoPercentage from './recordFields/CryptoPercentage'
 export type CryptoType = {

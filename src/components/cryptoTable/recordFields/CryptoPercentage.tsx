@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import { ReactComponent as Upper } from '../../../../assets/upper.svg'
+import { ReactComponent as Upper } from '../../../assets/upper.svg'
 function CryptoPercentage({ percentage }: { percentage: number }) {
     return (
         <div className="flex items-center justify-end gap-x-2">

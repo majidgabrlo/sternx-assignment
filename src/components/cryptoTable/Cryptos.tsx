@@ -1,11 +1,11 @@
 import { useQuery } from 'react-query'
-import CryptoTableContainer from "./cryptoTable/table/CryptoTableContainer"
-import CryptoTableRecord, { CryptoType } from "./cryptoTable/table/CryptoTableRecord"
+import CryptoTableContainer from "./CryptoTableContainer"
+import CryptoTableRecord, { CryptoType } from "./CryptoTableRecord"
 import { useState } from 'react';
 import { AxiosError } from 'axios'
-import { axiosClient } from '../axios/axiosClient';
-import SelectBox from './UI/SelectBox';
-import Pagination from './UI/Pagination';
+import { axiosClient } from '../../axios/axiosClient';
+import SelectBox from '../UI/SelectBox';
+import Pagination from '../UI/Pagination';
 
 
 function Cryptos() {
@@ -28,7 +28,6 @@ function Cryptos() {
         }
     );
 
-        console.log(isFetching);
         
     return (
         <div className='mt-8 w-[90%] mx-auto'>

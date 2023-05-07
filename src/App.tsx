@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import Cryptos from "./components/Cryptos";
+import Cryptos from "./components/cryptoTable/Cryptos";
 
 
 const queryClient = new QueryClient()
