@@ -1,6 +1,6 @@
 import { numberTransformer } from '../../utils/numberTransfors'
-import CryptoNameAndLogo from './recordFields/CryptoNameAndLogo'
-import CryptoPercentage from './recordFields/CryptoPercentage'
+import CryptoNameAndLogo from './recordFieldsComponents/CryptoNameAndLogo'
+import CryptoPercentage from './recordFieldsComponents/CryptoPercentage'
 export type CryptoType = {
     number: number,
     name: string,

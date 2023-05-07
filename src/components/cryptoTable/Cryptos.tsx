@@ -20,7 +20,7 @@ function Cryptos() {
         }
     );
 
-    const { data: cryptos, error,isFetching } = useQuery<CryptoType[], AxiosError>(
+    const { data: cryptos, error, isLoading } = useQuery<CryptoType[], AxiosError>(
         ["cryptos", page, symbol],
         async () => (await axiosClient.get<CryptoType[]>(`/coins/markets?vs_currency=${symbol}&page=${page}&per_page=20&price_change_percentage`)).data,
         {
@@ -28,7 +28,7 @@ function Cryptos() {
         }
     );
 
-        
+
     return (
         <div className='mt-8 w-[90%] mx-auto'>
             <div className='flex justify-end mb-5'>
@@ -36,11 +36,11 @@ function Cryptos() {
                     {symbols?.map(s => <option key={s} className='uppercase' value={s}>{s.toLocaleUpperCase()}</option>)}
                 </SelectBox>
             </div>
-            {error && !isFetching && <div className='text-red-400 text-center'>{error.message}</div>}
-            {isFetching && <div className='text-center'>Loading...</div>}
+            {error && !isLoading && <div className='text-red-400 text-center'>{error.message}</div>}
+            {isLoading && <div className='text-center'>Loading...</div>}
             {!!cryptos?.length && <>
                 <CryptoTableContainer>
-                    {cryptos?.map((item, i) => <CryptoTableRecord key={item.symbol} {...item} number={i + 1} />)}
+                    {cryptos?.map((item, i) => <CryptoTableRecord key={item.symbol} {...item} number={i + 1 + ((page - 1) * 20)} />)}
                 </CryptoTableContainer>
                 <Pagination currentPage={page} onChange={(number) => { setPage(number); }} />
             </>}

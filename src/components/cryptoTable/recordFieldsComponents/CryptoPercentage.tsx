@@ -1,9 +1,9 @@
 import classnames from 'classnames'
-import { ReactComponent as Upper } from '../../../assets/upper.svg'
+import { ReactComponent as Arrow } from '../../../assets/arrow.svg'
 function CryptoPercentage({ percentage }: { percentage: number }) {
     return (
         <div className="flex items-center justify-end gap-x-2">
-            <Upper className={classnames('w-3 h-3', {
+            <Arrow role='arrow' className={classnames('w-3 h-3', {
                 'fill-red-400 rotate-180': percentage < 0,
                 'fill-green-400': percentage > 0,
             })} />
