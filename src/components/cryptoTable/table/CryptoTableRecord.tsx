@@ -1,7 +1,7 @@
 import { numberTransformer } from '../../../utils/numberTransfors'
 import CryptoNameAndLogo from './recordFields/CryptoNameAndLogo'
 import CryptoPercentage from './recordFields/CryptoPercentage'
-type CryptoTableRecordType = {
+export type CryptoType = {
     number: number,
     name: string,
     current_price: number,
@@ -13,7 +13,7 @@ type CryptoTableRecordType = {
     image: string
 }
 
-function CryptoTableRecord({ circulating_supply, current_price, market_cap, name, number, price_change_percentage_24h, symbol, total_volume, image }: CryptoTableRecordType) {
+function CryptoTableRecord({ circulating_supply, current_price, market_cap, name, number, price_change_percentage_24h, symbol, total_volume, image }: CryptoType) {
     return (
         <tr className='!border-b border-slate-500 text-sm h-16'>
             <td className='pr-4 text-slate-500 text-xs'>{number}</td>

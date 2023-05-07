@@ -4,7 +4,7 @@ import CryptoTableHeader from "./CryptoTableHeader"
 
 function CryptoTableContainer({ children }: { children: ReactNode }) {
     return (
-        <table className="table-auto w-[90%] mx-auto text-right">
+        <table className="table-auto text-right w-full">
             <CryptoTableHeader />
             <tbody>
                 {children}
